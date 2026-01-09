@@ -3,7 +3,9 @@ import javascriptLogo from './javascript.svg'
 import viteLogo from '/vite.svg'
 import { setupCounter } from './counter.js'
 
-document.querySelector('#app').innerHTML = `
+const app = document.querySelector('#app')
+if (app) {
+  app.innerHTML = `
   <div>
     <a href="https://vite.dev" target="_blank">
       <img src="${viteLogo}" class="logo" alt="Vite logo" />
@@ -19,6 +21,8 @@ document.querySelector('#app').innerHTML = `
       Click on the Vite logo to learn more
     </p>
   </div>
-`
+  `
 
-setupCounter(document.querySelector('#counter'))
+  const counterEl = document.querySelector('#counter')
+  if (counterEl) setupCounter(counterEl)
+}
