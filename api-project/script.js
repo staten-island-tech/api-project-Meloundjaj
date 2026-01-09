@@ -1,4 +1,6 @@
 const API_URL = "https://theofficeapi.dev/api/characters";
+const QUOTE_API_URL = 'https://officeapi.akashrajpurohit.com/quotes/random' // replace with real endpoint
+const quotesCache = {}
 
 const fetchBtn = document.getElementById("fetch-btn");
 const output = document.getElementById("api-response");
