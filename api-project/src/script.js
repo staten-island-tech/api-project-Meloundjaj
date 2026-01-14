@@ -1,4 +1,4 @@
-// Simple fetch helper (returns parsed JSON or throws)
+
 async function getData(url) {
   try {
     const res = await fetch(url);
@@ -10,7 +10,6 @@ async function getData(url) {
   }
 }
 
-// Endpoints to try (order matters)
 const QUOTE_ENDPOINT_CANDIDATES = [
   "https://officeapi.akashrajpurohit.com/quote/random",
 ];
@@ -21,7 +20,7 @@ const LOCAL_FALLBACK_QUOTES = [
   { quote: "I declare bankruptcy!", character: "Michael" },
 ];
 
-// Try multiple endpoints, return the first successful parsed JSON
+
 async function tryFetchAny(urls) {
   for (const url of urls) {
     try {
@@ -84,5 +83,3 @@ window.addEventListener("DOMContentLoaded", () => {
   if (btn) btn.addEventListener("click", getRandomQuote);
 });
 
-// Ensure the DOM is fully loaded before running the initial fetch
-// (removed leftover character fetch call) - project now uses getRandomQuote()
