@@ -14,11 +14,6 @@ const QUOTE_ENDPOINT_CANDIDATES = [
   "https://officeapi.akashrajpurohit.com/quote/random",
 ];
 
-const LOCAL_FALLBACK_QUOTES = [
-  { quote: "Bears. Beets. Battlestar Galactica.", character: "Jim" },
-  { quote: "I am Beyoncé, always.", character: "Michael" },
-  { quote: "I declare bankruptcy!", character: "Michael" },
-];
 
 
 async function tryFetchAny(urls) {
@@ -53,11 +48,6 @@ async function getRandomQuote() {
       if (!Array.isArray(quotes) && typeof quotes === "object") {
         quotes = [quotes];
       }
-    }
-
-    if (!Array.isArray(quotes) || quotes.length === 0) {
-      console.info("Using local fallback quotes");
-      quotes = LOCAL_FALLBACK_QUOTES;
     }
 
     const q = quotes[Math.floor(Math.random() * quotes.length)];
